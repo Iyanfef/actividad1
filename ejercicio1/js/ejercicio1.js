@@ -1,17 +1,29 @@
 
-function comprobar() {
-    do {
-        var sumatorio=0;
-        var numero=prompt("Teclee un numero entero positivo");
+function esEntero(num) {
+    if (num===parseInt(num)) {
+        return true;
+    } else {
+        return false;
+    }
+    
 
-        if (!isNaN(numero) && numero>0) {
-            sumatorio+=numero;
-        } else {
-            console.error("No es un muero válido");
-        }
-
-
-    } while (isNaN(num) || num<0);
-    console.log(sumatorio);
 }
-comprobar();
+function esPositivo(num) {
+    if (num>=0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function sumatorio(numero) {
+    let resultado = 0;
+    do {
+        for (let i = 1; i <= numero; i++) {
+            resultado += i;
+        }
+        return resultado;
+    } while (!esPositivo && !esEntero);
+    
+}
+var numero = parseInt(prompt("Introduce un numero: "))
+sumatorio();
